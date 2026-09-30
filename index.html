@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Byline by CLINICTOPICS | Publication support for clinicians</title>
+<meta name="description" content="Byline by CLINICTOPICS: free, independent publication support for selected doctors, and paid staged services for everyone else.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #ffffff;
+  --ink: #1c2530;
+  --muted: #566270;
+  --rule: #d8dde3;
+  --tint: #f3f5f7;
+  --red: #a51c30;
+  --red-hover: #8a1527;
+  --on-red: #ffffff;
+  --navy: #0e2a47;
+  --on-navy: #e8eef4;
+  --focus: #1a5fb4;
+  --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --sans: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12171d; --ink: #e7ebef; --muted: #9aa5b1; --rule: #2b3540; --tint: #1a222b;
+    --red: #e0596b; --red-hover: #ec7a89; --on-red: #12171d; --navy: #0a1622; --on-navy: #dfe7ee; --focus: #7db3ff;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12171d; --ink: #e7ebef; --muted: #9aa5b1; --rule: #2b3540; --tint: #1a222b;
+  --red: #e0596b; --red-hover: #ec7a89; --on-red: #12171d; --navy: #0a1622; --on-navy: #dfe7ee; --focus: #7db3ff;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 7.5rem); -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 1.0625rem; line-height: 1.65; }
+img, svg { max-width: 100%; }
+a { color: var(--red); text-underline-offset: 3px; }
+a:hover { color: var(--red-hover); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.wrap { width: 100%; max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+.sans { font-family: var(--sans); }
+
+/* Header */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
+.masthead { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 0.85rem 0 0.4rem; }
+.wordmark { font-family: var(--serif); font-weight: 700; font-size: 1.6rem; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+.wordmark span { color: var(--red); }
+.tagline { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); }
+nav[aria-label="Main"] { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+nav[aria-label="Main"]::-webkit-scrollbar { display: none; }
+nav ul { display: flex; gap: 1.4rem; list-style: none; margin: 0; padding: 0; white-space: nowrap; }
+nav a { display: block; padding: 0.55rem 0 0.6rem; font-family: var(--sans); font-size: 0.92rem; font-weight: 500; color: var(--ink); text-decoration: none; border-bottom: 3px solid transparent; }
+nav a:hover, nav a.active { border-bottom-color: var(--red); color: var(--ink); }
+
+/* Buttons */
+.btn { display: inline-block; font-family: var(--sans); font-weight: 600; font-size: 0.98rem; line-height: 1.2; padding: 0.8rem 1.3rem; border-radius: 3px; text-decoration: none; border: 1.5px solid var(--red); cursor: pointer; }
+.btn-primary { background: var(--red); color: var(--on-red); }
+.btn-primary:hover { background: var(--red-hover); border-color: var(--red-hover); color: var(--on-red); }
+.btn-ghost { background: transparent; color: var(--red); }
+.btn-ghost:hover { background: var(--tint); color: var(--red-hover); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; }
+
+/* Sections */
+section { padding: 3.5rem 0; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: 0; }
+h1, h2, h3 { font-family: var(--serif); line-height: 1.2; margin: 0 0 0.6em; letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.1rem, 5.4vw, 3.5rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.15rem); font-weight: 700; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+p { margin: 0 0 1em; max-width: 68ch; }
+.lead { font-size: 1.25rem; line-height: 1.55; color: var(--ink); }
+.muted { color: var(--muted); }
+.section-head { border-top: 4px solid var(--red); padding-top: 0.9rem; margin-bottom: 2rem; }
+.section-head h2 { margin-bottom: 0.3em; }
+.section-head p { color: var(--muted); margin: 0; }
+
+/* Hero */
+.hero { padding: 3.5rem 0 3rem; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 3rem; align-items: start; }
+.glance { background: var(--tint); border-top: 4px solid var(--red); padding: 1.2rem 1.3rem 1.3rem; font-family: var(--sans); }
+.glance h2 { font-family: var(--sans); font-size: 1rem; font-weight: 700; margin: 0 0 0.8rem; letter-spacing: 0; }
+.glance dl { margin: 0; }
+.glance dt { font-size: 0.8rem; color: var(--muted); font-weight: 600; margin-top: 0.85rem; }
+.glance dd { margin: 0.1rem 0 0; font-size: 0.95rem; line-height: 1.45; }
+
+/* Ordered process */
+.steps { list-style: none; counter-reset: step; margin: 0; padding: 0; max-width: 46rem; }
+.steps li { counter-increment: step; position: relative; padding: 0 0 1.5rem 3.2rem; border-left: 1px solid var(--rule); margin-left: 1rem; }
+.steps li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.steps li::before { content: counter(step); position: absolute; left: -1rem; top: -0.1rem; width: 2rem; height: 2rem; border-radius: 50%; background: var(--red); color: var(--on-red); font-family: var(--sans); font-weight: 700; font-size: 0.9rem; display: grid; place-items: center; }
+.steps h3 { margin-bottom: 0.15em; }
+.steps p { margin: 0; color: var(--muted); }
+.four { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin-top: 0.5rem; }
+.four div { border-top: 1px solid var(--rule); padding-top: 0.8rem; }
+.four h3 { font-family: var(--sans); font-size: 1rem; }
+.four p { font-size: 0.95rem; color: var(--muted); margin: 0; }
+
+/* Two-column text */
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; }
+.plain-list { margin: 0 0 1em; padding-left: 1.2rem; max-width: 60ch; }
+.plain-list li { margin-bottom: 0.4em; }
+.callout { border-left: 4px solid var(--red); background: var(--tint); padding: 1rem 1.2rem; max-width: 46rem; }
+.callout p:last-child { margin-bottom: 0; }
+
+/* Tables and rows */
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-family: var(--sans); font-size: 0.95rem; min-width: 32rem; }
+th, td { text-align: left; padding: 0.7rem 0.8rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; background: var(--tint); }
+.service { display: grid; grid-template-columns: 14rem minmax(0, 1fr); gap: 1.5rem; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+.service:last-of-type { border-bottom: 1px solid var(--rule); }
+.service h3 { margin: 0; font-size: 1.1rem; }
+.service p { margin: 0; color: var(--muted); }
+
+/* FAQ */
+details { border-top: 1px solid var(--rule); padding: 0.9rem 0; max-width: 46rem; }
+details:last-of-type { border-bottom: 1px solid var(--rule); }
+summary { cursor: pointer; font-family: var(--sans); font-weight: 600; font-size: 1rem; }
+details p { margin: 0.7rem 0 0; color: var(--muted); }
+
+/* Empty state */
+.empty { border: 1px dashed var(--rule); padding: 1.6rem; color: var(--muted); max-width: 46rem; }
+.empty p { margin: 0; }
+
+/* Forms */
+form { max-width: 42rem; font-family: var(--sans); }
+.field { margin-bottom: 1.1rem; }
+label, legend { display: block; font-weight: 600; font-size: 0.92rem; margin-bottom: 0.3rem; padding: 0; }
+.hint { font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+input[type="text"], input[type="email"], select, textarea { width: 100%; font: inherit; font-size: 1rem; color: var(--ink); background: var(--paper); border: 1.5px solid var(--muted); border-radius: 3px; padding: 0.65rem 0.75rem; }
+textarea { min-height: 9rem; resize: vertical; line-height: 1.5; }
+fieldset { border: 0; padding: 0; margin: 0 0 1.1rem; }
+.check { display: flex; gap: 0.6rem; align-items: flex-start; margin-bottom: 0.6rem; font-weight: 400; font-size: 0.95rem; }
+.check input { margin-top: 0.3rem; flex: none; width: 1.05rem; height: 1.05rem; accent-color: var(--red); }
+.result { margin-top: 1.5rem; padding: 1.1rem 1.2rem; background: var(--tint); border-left: 4px solid var(--red); font-family: var(--sans); font-size: 0.95rem; max-width: 42rem; }
+.result[hidden] { display: none; }
+.result dl { margin: 0.6rem 0 0; }
+.result dt { font-weight: 600; margin-top: 0.5rem; }
+.result dd { margin: 0; white-space: pre-wrap; }
+
+/* Footer */
+footer { background: var(--navy); color: var(--on-navy); padding: 3rem 0 2.5rem; font-family: var(--sans); font-size: 0.92rem; }
+footer a { color: var(--on-navy); }
+footer .wordmark { color: var(--on-navy); font-size: 1.3rem; }
+footer .wordmark span { color: var(--on-navy); opacity: 0.75; }
+.foot-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)); gap: 2rem; }
+footer h2 { font-family: var(--sans); font-size: 0.9rem; font-weight: 700; margin: 0 0 0.6rem; letter-spacing: 0; }
+footer ul { list-style: none; margin: 0; padding: 0; }
+footer li { margin-bottom: 0.35rem; }
+footer p { max-width: 36ch; opacity: 0.85; }
+.legal { border-top: 1px solid rgba(255,255,255,0.18); margin-top: 2rem; padding-top: 1rem; opacity: 0.8; font-size: 0.85rem; }
+
+@media (max-width: 52rem) {
+  .hero-grid, .cols, .foot-grid { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .service { grid-template-columns: minmax(0, 1fr); gap: 0.4rem; }
+  section { padding: 2.6rem 0; }
+  .tagline { display: none; }
+}
+@media (max-width: 30rem) { .four { grid-template-columns: minmax(0, 1fr); } }
+
+/* Pre-submission and portal demo */
+.demo-banner { background: var(--tint); border-left: 4px solid var(--red); padding: 0.8rem 1rem; font-family: var(--sans); font-size: 0.92rem; margin-bottom: 1.2rem; max-width: 46rem; }
+.portal { border: 1px solid var(--rule); font-family: var(--sans); background: var(--paper); }
+.roles { display: flex; flex-wrap: wrap; background: var(--tint); border-bottom: 1px solid var(--rule); }
+.roles button { flex: 1 1 8rem; padding: 0.85rem 1rem; font: inherit; font-weight: 600; font-size: 0.95rem; border: 0; border-bottom: 3px solid transparent; background: transparent; color: var(--muted); cursor: pointer; }
+.roles button[aria-pressed="true"] { background: var(--paper); color: var(--ink); border-bottom-color: var(--red); }
+.subnav { display: flex; flex-wrap: wrap; gap: 0.3rem 1.3rem; padding: 0.6rem 1rem 0; border-bottom: 1px solid var(--rule); }
+.subnav button { background: none; border: 0; border-bottom: 3px solid transparent; font: inherit; font-size: 0.92rem; padding: 0.4rem 0 0.5rem; cursor: pointer; color: var(--muted); }
+.subnav button[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom-color: var(--red); }
+.pbody { padding: 1.2rem 1rem 1.6rem; }
+.pbody h3 { font-family: var(--sans); font-size: 1.05rem; margin: 0 0 0.6rem; }
+.pbody form { max-width: 40rem; }
+.chip { display: inline-block; font-size: 0.78rem; font-weight: 600; padding: 0.15rem 0.6rem; border-radius: 99px; border: 1px solid var(--rule); background: var(--tint); white-space: nowrap; }
+.chip.ok { border-color: var(--red); color: var(--red); }
+.row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.6rem 1rem; padding: 0.85rem 0; border-top: 1px solid var(--rule); }
+.row:first-of-type { border-top: 0; }
+.row .grow { flex: 1 1 15rem; min-width: 0; }
+.row p { margin: 0.15rem 0 0; font-size: 0.88rem; color: var(--muted); max-width: none; }
+.actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
+.actions select { width: auto; max-width: 100%; font-size: 0.88rem; padding: 0.45rem 0.5rem; }
+.btn-sm { padding: 0.5rem 0.9rem; font-size: 0.88rem; }
+.facts { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 0.4rem 1rem; margin: 0 0 1rem; font-size: 0.95rem; }
+.facts dt { font-weight: 600; color: var(--muted); }
+.facts dd { margin: 0; }
+.toast { margin: 0; padding: 0.7rem 1rem; background: var(--tint); border-bottom: 1px solid var(--rule); border-left: 4px solid var(--red); font-size: 0.92rem; }
+.toast[hidden], .form-error[hidden] { display: none; }
+.form-error { color: var(--red); font-weight: 600; font-size: 0.92rem; margin: 0 0 0.8rem; }
+.report { border: 1px solid var(--rule); padding: 1rem; margin-top: 1.2rem; }
+.tiers th:first-child, .tiers td:first-child { font-weight: 600; width: 32%; }
+@media (max-width: 30rem) { .facts { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; } .facts dd { margin-bottom: 0.5rem; } }
+
+.code { font-family: ui-monospace, Menlo, Consolas, "Courier New", monospace; letter-spacing: 0.02em; font-size: 0.92em; }
+span.code { background: var(--tint); padding: 0.05rem 0.35rem; border-radius: 3px; }
+.disclaimer-text { max-width: 46rem; }
+.disclaimer-text h3 { margin: 1.6rem 0 0.35rem; font-size: 1.1rem; }
+.disclaimer-text h3:first-child { margin-top: 0; }
+.disclaimer-text p { font-size: 1rem; }
+
+/* Responsive refinements: phones, tablets, laptops */
+.skip { position: absolute; left: -999px; top: 0; z-index: 50; background: var(--paper); color: var(--ink); padding: 0.6rem 1rem; font-family: var(--sans); font-weight: 600; }
+.skip:focus { left: 0.5rem; top: calc(env(safe-area-inset-top, 0px) + 0.5rem); outline: 3px solid var(--focus); }
+.wrap { padding-left: max(1.25rem, env(safe-area-inset-left, 0px)); padding-right: max(1.25rem, env(safe-area-inset-right, 0px)); }
+main:focus { outline: none; }
+.l-short { display: none; }
+.menu-btn { display: none; font-family: var(--sans); font-weight: 600; font-size: 0.92rem; padding: 0.55rem 1.1rem; min-height: 44px; border: 1.5px solid var(--red); border-radius: 3px; background: transparent; color: var(--red); cursor: pointer; }
+.menu-btn[aria-expanded="true"] { background: var(--red); color: var(--on-red); }
+.code, .row .grow { overflow-wrap: anywhere; }
+
+@media (min-width: 64rem) {
+  .l-full { display: none; }
+  .l-short { display: inline; }
+  nav ul { gap: 1.35rem; }
+}
+
+/* Menu button and drop-down navigation below 64rem (tablets and phones) */
+@media (max-width: 63.99rem) {
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 4.75rem); }
+  .masthead { align-items: center; padding: 0.5rem 0; gap: 0.8rem; }
+  .masthead .tagline { margin-left: auto; }
+  .menu-btn { display: inline-flex; align-items: center; }
+  nav[aria-label="Main"] { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--paper); border-bottom: 1px solid var(--rule); max-height: calc(100vh - 4.75rem - env(safe-area-inset-top, 0px)); overflow-y: auto; padding: 0.25rem max(1.25rem, env(safe-area-inset-right, 0px)) 1rem max(1.25rem, env(safe-area-inset-left, 0px)); }
+  .site-header.open nav[aria-label="Main"] { display: block; }
+  nav ul { flex-direction: column; gap: 0; white-space: normal; }
+  nav a { padding: 0.85rem 0; min-height: 48px; font-size: 1rem; border-bottom: 1px solid var(--rule); }
+  nav a:hover, nav a.active { border-bottom-color: var(--rule); color: var(--red); }
+  nav a.active { font-weight: 700; }
+}
+
+/* Tablets */
+@media (min-width: 40rem) and (max-width: 63.99rem) {
+  .hero { padding: 2.8rem 0 2.5rem; }
+  .four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Phones */
+@media (max-width: 30rem) {
+  body { font-size: 1rem; }
+  section { padding: 2.1rem 0; }
+  .hero { padding: 1.8rem 0 2rem; }
+  .lead { font-size: 1.12rem; }
+  .section-head { margin-bottom: 1.4rem; }
+  .btn-row .btn { flex: 1 1 100%; text-align: center; }
+  form .btn { width: 100%; }
+  .glance { padding: 1rem; }
+  .steps li { padding-left: 2.8rem; }
+  .service { padding: 0.9rem 0; }
+  .roles button { flex: 1 1 auto; padding: 0.75rem 0.5rem; font-size: 0.85rem; }
+  .pbody { padding: 1rem 0.8rem 1.3rem; }
+  .row .actions { width: 100%; }
+  .actions select { width: 100%; }
+  .actions .btn-sm { flex: 1 1 auto; }
+  .demo-banner { font-size: 0.88rem; }
+  .foot-grid { gap: 1.5rem; }
+  .callout { padding: 0.85rem 1rem; }
+}
+
+/* Touch screens: larger tap targets */
+@media (pointer: coarse) {
+  .btn, .btn-sm { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .subnav button, .roles button { min-height: 44px; }
+  summary { padding: 0.4rem 0; }
+  .check { padding: 0.25rem 0; }
+  .check input { width: 1.25rem; height: 1.25rem; }
+  footer a { display: inline-block; padding: 0.2rem 0; }
+}
+
+/* Landscape phones: do not let the header take up the screen */
+@media (max-height: 30rem) and (orientation: landscape) {
+  .site-header { position: static; }
+  html { scroll-padding-top: 1rem; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="masthead">
+      <a class="wordmark" href="#home">Byline<span>.</span></a>
+      <span class="tagline">Publication support for clinicians, by CLINICTOPICS</span>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    </div>
+    <nav id="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#apply"><span class="l-full">Apply for Support</span><span class="l-short">Apply</span></a></li>
+        <li><a href="#services"><span class="l-full">Paid Publication Services</span><span class="l-short">Paid Services</span></a></li>
+        <li><a href="#token-rules">Token Rules</a></li>
+        <li><a href="#presubmission"><span class="l-full">Pre-submission Review</span><span class="l-short">Pre-submission</span></a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#about"><span class="l-full">About CLINICTOPICS</span><span class="l-short">About</span></a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#portal">Portal demo</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- HOME -->
+<section id="home" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Turn your clinical work into published research</h1>
+      <p class="lead">CLINICTOPICS gives selected doctors free, hands-on support to design, write and publish their studies. If your project isn't selected, you can buy the same support in stages.</p>
+      <p class="muted">You stay the independent author. We help with the work around it.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#apply">Apply for support</a>
+        <a class="btn btn-ghost" href="#services">View paid services</a>
+      </div>
+    </div>
+    <aside class="glance" aria-label="Programme at a glance">
+      <h2>At a glance</h2>
+      <dl>
+        <dt>Who can apply</dt>
+        <dd>Registered doctors in private practice or in government hospitals.</dd>
+        <dt>What selected doctors receive</dt>
+        <dd>Protocol, statistics, writing and submission support, at no charge.</dd>
+        <dt>Cost to selected doctors</dt>
+        <dd>None. Support is in kind. No cash is paid to you.</dd>
+        <dt>Who controls the results</dt>
+        <dd>You do. No company has a say in your findings or in where you publish.</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section aria-labelledby="h-steps4">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-steps4">How it works, in brief</h2>
+      <p>Four stages from idea to decision. The full process is on the next section.</p>
+    </div>
+    <div class="four">
+      <div><h3>Submit</h3><p>Send a short synopsis of your study with your registration details.</p></div>
+      <div><h3>Review</h3><p>We verify your details and score your idea against published criteria.</p></div>
+      <div><h3>Decide</h3><p>You hear whether you're supported, offered a paid package, or asked to revise.</p></div>
+      <div><h3>Publish</h3><p>We work with you stage by stage, from protocol to journal submission.</p></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-independence">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-independence">Our independence promise</h2>
+    </div>
+    <div class="callout">
+      <p>We do not pay applicants, and we do not ask for anything in return for support. Reviewers receive a fixed honorarium for their review work, never for an outcome. Support is never linked to prescribing, promoting or favouring any product. Your study topic, your findings and your choice of journal are yours.</p>
+      <p>Read the full <a href="#policy">independence, ethics and authorship policy</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-eligible">
+  <div class="wrap cols">
+    <div>
+      <div class="section-head"><h2 id="h-eligible">Who can apply</h2></div>
+      <ul class="plain-list">
+        <li>Doctors with a valid medical registration.</li>
+        <li>Doctors working in private practice, private hospitals or government hospitals.</li>
+        <li>Early-career and experienced clinicians with a study they want to run or write up.</li>
+      </ul>
+      <p class="muted">Government doctors may need permission from their institution before accepting outside support. Please check your own rules before applying.</p>
+    </div>
+    <div>
+      <div class="section-head"><h2>Recent supported work</h2></div>
+      <div class="empty"><p>Our first supported projects will appear here once they are complete, with the doctor's consent.</p></div>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="section-head"><h2 id="h-faq">Common questions</h2></div>
+    <details><summary>Is the support really free?</summary><p>Yes, for selected projects. The support is provided in kind by CLINICTOPICS. There is no fee, and no cash is paid to you.</p></details>
+    <details><summary>Do I need to have my ethics approval already?</summary><p>No. You can apply with a synopsis. Ethics approval from your institution must be in place before any study work begins.</p></details>
+    <details><summary>Will my idea be shared with anyone else?</summary><p>No. Your application stays with CLINICTOPICS and its reviewers, under confidentiality. We do not send applications to companies or other sponsors.</p></details>
+    <details><summary>Who is listed as an author?</summary><p>You are. Authorship follows recognised criteria. Our writers are acknowledged for their help and are listed as authors only if they meet those criteria.</p></details>
+    <details><summary>What if I'm not selected?</summary><p>We'll tell you why. You can revise and resubmit, or buy the same support as a paid package. There is no pressure to do either.</p></details>
+    <details><summary>What if I can't pay for a paid service?</summary><p>Tell us. In some cases CLINICTOPICS issues an access token that waives the fee, or invites you into the support programme directly. If you have a token, enter it on the application form or when you request a review. A token affects payment and access only. It does not change how your work is reviewed. Read the <a href="#token-rules">token rules</a>.</p></details>
+    <details><summary>Can you guarantee publication?</summary><p>No. Journals decide what they publish. We help you produce the strongest submission you can.</p></details>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" aria-labelledby="h-how">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-how">How it works</h2>
+      <p>Every applicant goes through the same process.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Submit your synopsis</h3><p>Complete the application with your details and a short synopsis of your study.</p></li>
+      <li><h3>Verification</h3><p>We check your registration and institution, and look for duplicate topics.</p></li>
+      <li><h3>Expert review</h3><p>Reviewers score your synopsis on scientific merit, feasibility, ethics readiness, relevance and our capacity. Reviewers declare any conflicts of interest.</p></li>
+      <li><h3>Decision</h3><p>You're told one of four outcomes: supported, offered a paid package, asked to revise and resubmit, or declined with a reason.</p></li>
+      <li><h3>Support agreement</h3><p>We agree in writing what we'll provide. The agreement confirms that support is in kind, that you keep control of your results, and how authorship and funding will be stated.</p></li>
+      <li><h3>Ethics approval</h3><p>Your institutional ethics committee approves the study before work begins. We help you prepare the submission.</p></li>
+      <li><h3>Guided delivery</h3><p>Protocol, statistics and data management, manuscript writing, journal selection and submission, and replies to reviewers. You sign off at each stage.</p></li>
+    </ol>
+    <h3 style="margin-top:2.5rem">Timelines and what to expect</h3>
+    <p>We aim to give you a decision within four weeks of the application closing for each round. Delivery time depends on your study design and your institution's ethics timetable. We'll agree a plan with you in the support agreement.</p>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section id="apply" aria-labelledby="h-apply">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-apply">Apply for support</h2>
+      <p>Takes about ten minutes. You can ask us to help draft your synopsis.</p>
+    </div>
+
+    <div class="cols" style="margin-bottom:2.5rem">
+      <div>
+        <h3>What's included</h3>
+        <ul class="plain-list">
+          <li>Protocol development and review</li>
+          <li>Ethics-committee submission preparation</li>
+          <li>Statistics and data management</li>
+          <li>Manuscript writing support</li>
+          <li>Journal selection and submission</li>
+          <li>Help with replies to reviewers</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What we don't do</h3>
+        <ul class="plain-list">
+          <li>Pay cash or gifts to applicants</li>
+          <li>Fund studies tied to a product or company</li>
+          <li>Write papers for you to sign without your work</li>
+          <li>Promise acceptance by a journal</li>
+          <li>Share your synopsis with third parties</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Selection criteria</h3>
+    <div class="table-scroll" style="margin-bottom:2.5rem">
+      <table>
+        <thead><tr><th>Criterion</th><th>What we look for</th></tr></thead>
+        <tbody>
+          <tr><td>Scientific merit</td><td>A clear question and a sound approach.</td></tr>
+          <tr><td>Feasibility</td><td>A realistic plan for your setting, sample and timeline.</td></tr>
+          <tr><td>Ethics readiness</td><td>A route to institutional ethics approval.</td></tr>
+          <tr><td>Relevance</td><td>A question that matters to clinical practice.</td></tr>
+          <tr><td>Fit with capacity</td><td>Whether we can support the project well in this round.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Application form</h3>
+    <form id="apply-form" novalidate>
+      <div class="field"><label for="a-name">Full name</label><input id="a-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="a-desig">Designation</label><input id="a-desig" name="designation" type="text" required></div>
+      <div class="field"><label for="a-inst">Institution or practice</label><input id="a-inst" name="institution" type="text" required></div>
+      <div class="field"><label for="a-reg">Medical registration ID</label><input id="a-reg" name="reg" type="text" required></div>
+      <div class="field"><label for="a-email">Email</label><input id="a-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field">
+        <label for="a-type">Study type</label>
+        <select id="a-type" name="type">
+          <option>Randomised or non-randomised trial</option>
+          <option>Observational study (cohort, case-control, cross-sectional)</option>
+          <option>Systematic review or meta-analysis</option>
+          <option>Diagnostic accuracy study</option>
+          <option>Case report or case series</option>
+          <option>Laboratory or in-vitro study</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="a-syn">Synopsis <span class="hint">Question, design, setting, and expected sample. About 250 to 400 words. Tick the box below if you'd like help drafting it.</span></label>
+        <textarea id="a-syn" name="synopsis" required></textarea>
+      </div>
+      <div class="field"><label for="a-token">Access token <span class="hint">Optional. Enter it if CLINICTOPICS invited you directly. See the <a href="#token-rules">token rules</a>.</span></label><input id="a-token" name="token" type="text" autocomplete="off"></div>
+      <fieldset>
+        <legend>Declarations</legend>
+        <label class="check"><input type="checkbox" name="d1" required> This is my original work.</label>
+        <label class="check"><input type="checkbox" name="d2" required> No company or other sponsor is funding or influencing this project.</label>
+        <label class="check"><input type="checkbox" name="d3"> My institution has approved this project, or I will obtain approval before starting.</label>
+        <label class="check"><input type="checkbox" name="d4"> If I work in a government institution, I have checked whether I need permission to accept outside support.</label>
+        <label class="check"><input type="checkbox" name="help"> I'd like help drafting my synopsis.</label>
+      </fieldset>
+      <fieldset>
+        <legend>Consent</legend>
+        <label class="check"><input type="checkbox" name="consent" required> I agree that CLINICTOPICS may store and review my application, and will not share it outside CLINICTOPICS and its reviewers.</label>
+      </fieldset>
+      <button class="btn btn-primary" type="submit">Review application</button>
+    </form>
+    <div id="apply-result" class="result" role="status" tabindex="-1" hidden></div>
+
+    <p class="muted" style="margin-top:2rem">Not selected in this round, or want to skip the wait? See <a href="#services">paid publication services</a>.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" aria-labelledby="h-services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-services">Paid publication services</h2>
+      <p>The same support, bought in stages. Buy one stage or several.</p>
+    </div>
+    <div class="service"><h3>Protocol development</h3><p>Study design, sample size reasoning, protocol writing and ethics-committee submission preparation.</p></div>
+    <div class="service"><h3>Statistics and data management</h3><p>Data collection sheets, cleaning, analysis plans, analysis and results tables.</p></div>
+    <div class="service"><h3>Manuscript writing support</h3><p>Drafting and editing to the relevant reporting guideline, with you directing the content and conclusions.</p></div>
+    <div class="service"><h3>Pre-submission review</h3><p>An expert read of your finished manuscript before you submit. <a href="#presubmission">See the review options</a>.</p></div>
+    <div class="service"><h3>Journal selection and submission</h3><p>Choosing suitable journals, avoiding predatory ones, formatting and submission.</p></div>
+    <div class="service"><h3>Response to reviewers</h3><p>Organising reviewer comments, planning revisions and drafting point-by-point replies.</p></div>
+    <p style="margin-top:1.6rem">Have an access token? Enter it when you request a review, and payment is skipped. Read the <a href="#token-rules">token rules</a>.</p>
+    <p>Pricing depends on the stage and the study. Tell us what you need and we'll send a written quote before any work starts.</p>
+    <div class="btn-row"><a class="btn btn-primary" href="#contact">Request a quote</a></div>
+  </div>
+</section>
+
+<!-- TOKEN RULES -->
+<section id="token-rules" aria-labelledby="h-token-rules">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-token-rules">Token rules</h2>
+      <p>How access tokens work, who can get one, and what they do not do.</p>
+    </div>
+    <p class="lead">An access token is a code issued by CLINICTOPICS. It lets a doctor skip payment for a paid review, or join the support programme without waiting for a selection round. Tokens exist so that cost is not a barrier to good research. They do not buy a better review.</p>
+
+    <h3 style="margin-top:2rem">The two kinds of token</h3>
+    <div class="table-scroll" style="margin-bottom:2rem">
+      <table class="tiers">
+        <thead><tr><th></th><th>Payment waiver</th><th>Support invitation</th></tr></thead>
+        <tbody>
+          <tr><td>What it does</td><td>Skips payment for a paid review</td><td>Skips the selection round of the support programme</td></tr>
+          <tr><td>Where you enter it</td><td>On the "Request a review" form</td><td>On the application form</td></tr>
+          <tr><td>What it covers</td><td>Any review, Quick check only, or Expert review only, as stated when it is issued</td><td>One support application</td></tr>
+          <tr><td>What still applies</td><td>The review itself, done in the usual way</td><td>Verification of your registration, ethics approval, and the support agreement</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>The rules</h3>
+        <ul class="plain-list">
+          <li>Only CLINICTOPICS issues tokens, and every token is recorded with a reason when it is issued.</li>
+          <li>Each token has a set number of uses and may have an expiry date.</li>
+          <li>A token is issued to a named doctor or group. Do not share it, sell it or swap it.</li>
+          <li>A token has no cash value and cannot be exchanged for money.</li>
+          <li>A payment waiver works only for the review type stated on it.</li>
+          <li>A token stops working once it is used up, expired or revoked.</li>
+          <li>We may revoke a token at any time if it was issued in error or is misused.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What a token never does</h3>
+        <ul class="plain-list">
+          <li>It never changes how your manuscript is reviewed, or what the review finds.</li>
+          <li>Reviewers do not see whether a token was used.</li>
+          <li>It never skips ethics approval, registration checks, or the support agreement.</li>
+          <li>It never guarantees that a study will go ahead, or that a journal will accept a paper.</li>
+          <li>It is never linked to any product, company or outcome.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2rem">How to get a token</h3>
+    <p>We do not sell or advertise tokens. If cost is a barrier, or you were invited to take part, tell us through the <a href="#contact">contact form</a>. We consider each request on its own and cannot promise a token.</p>
+
+    <h3>How to use a token</h3>
+    <ol class="steps">
+      <li><h3>Find the token field</h3><p>It is on the application form and on the "Request a review" form, marked optional.</p></li>
+      <li><h3>Enter your code</h3><p>Capital letters and spaces do not matter. A code looks like BYL-XXXX-XXXX.</p></li>
+      <li><h3>Check the confirmation</h3><p>If the token works, payment or selection is skipped and you see a confirmation. If not, the message tells you why: not recognised, used up, expired, revoked, or meant for a different kind of request.</p></li>
+    </ol>
+
+    <div class="callout" style="margin-top:2rem">
+      <h3>Fairness and records</h3>
+      <p>We keep a record of each token: who it was issued to, the reason, the dates, and when it was used. We use this to check that tokens are issued fairly and used as intended. This information is handled under our privacy statement. If a token is misused, we may revoke it and decline to issue further tokens.</p>
+    </div>
+
+    <p class="muted" style="margin-top:1.5rem">The portal demo uses sample tokens (starting BYL-DEMO) that work only in the demo.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#portal">Try a token in the demo</a>
+      <a class="btn btn-ghost" href="#contact">Ask about a token</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRE-SUBMISSION REVIEW -->
+<section id="presubmission" aria-labelledby="h-pre">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-pre">Pre-submission review</h2>
+      <p>An expert read of your manuscript before a journal sees it.</p>
+    </div>
+    <p class="lead">Journals reject many papers for fixable reasons. A pre-submission review finds them first, so you send a stronger paper. You get a written report. You decide what to change, and you stay the author.</p>
+
+    <div class="cols" style="margin-top:2rem">
+      <div>
+        <h3>What you receive</h3>
+        <ul class="plain-list">
+          <li>A structured report on scientific soundness, methods and statistics</li>
+          <li>A check against the reporting guideline for your study type</li>
+          <li>A check of ethics, funding, conflict-of-interest and authorship statements</li>
+          <li>Suggestions for suitable journals and their author requirements</li>
+          <li>A readiness rating and a short list of must-fix items</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Who it is for</h3>
+        <ul class="plain-list">
+          <li>Doctors about to submit a manuscript, whether or not it was prepared with CLINICTOPICS</li>
+          <li>First-time authors who want a second pair of expert eyes</li>
+          <li>Supported-programme doctors, who get a discounted first review</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="margin-top:2.5rem">Choose a review</h3>
+    <div class="table-scroll" style="margin-bottom:1rem">
+      <table class="tiers">
+        <thead><tr><th></th><th>Quick check</th><th>Expert review</th></tr></thead>
+        <tbody>
+          <tr><td>Reviewed by</td><td>CLINICTOPICS editor</td><td>External expert reviewer and CLINICTOPICS editor</td></tr>
+          <tr><td>Covers</td><td>Guideline compliance, structure, required statements, references</td><td>Everything in Quick check, plus scientific soundness, design and statistics</td></tr>
+          <tr><td>You receive</td><td>Checklist report and must-fix list</td><td>Full written report and readiness rating</td></tr>
+          <tr><td>Price</td><td>To be announced</td><td>To be announced</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Need a statistician to look at your analysis? Ask us when you request a review. Supported-programme doctors receive a discount on their first review.</p>
+
+    <h3 style="margin-top:2.5rem">How it works</h3>
+    <ol class="steps">
+      <li><h3>Request a review</h3><p>Upload your manuscript, name your target journal and choose Quick check or Expert review.</p></li>
+      <li><h3>Payment</h3><p>Pay online, or enter an access token if you have one. Discounts apply automatically where they are due.</p></li>
+      <li><h3>Assignment</h3><p>A CLINICTOPICS editor checks your file. For Expert review, we match an external reviewer in your field, with no conflict of interest.</p></li>
+      <li><h3>Review</h3><p>The reviewer completes a structured form. Reviewers do not see your name.</p></li>
+      <li><h3>Your report</h3><p>The editor combines everything into one report, released to your portal. You revise, and you can ask for a re-review.</p></li>
+    </ol>
+
+    <div class="callout" style="margin-top:2.5rem">
+      <h3>Confidentiality</h3>
+      <p>Your unpublished manuscript is confidential. Reviewers agree in writing not to copy, share or reuse it. Reviewers are paid a fixed honorarium for completing a review, whatever the outcome, and never by any company. We will tell you before any software tool other than word processing and similarity checking is used on your manuscript.</p>
+    </div>
+
+    <h3 style="margin-top:2.5rem">Become a reviewer</h3>
+    <p>We invite experienced clinicians and researchers to review by invitation. We ask for a short profile, a conflict-of-interest declaration, a confidentiality agreement, and one paid trial review. Reviewers receive a fixed fee for each completed review. To be considered, use the <a href="#contact">contact form</a>.</p>
+
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#portal">See how it works in the demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTAL DEMO -->
+<section id="portal" aria-labelledby="h-portal">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-portal">Portal demo</h2>
+      <p>Click through the portal as a doctor, a reviewer and a CLINICTOPICS editor.</p>
+    </div>
+    <div class="demo-banner" role="note"><strong>Demonstration only.</strong> Nothing you enter is saved or sent. Names, works, reports, tokens and amounts are samples.</div>
+    <div class="cols" style="margin-bottom:1.5rem">
+      <div>
+        <h3>Where to find things</h3>
+        <ul class="plain-list">
+          <li><strong>A doctor's own profile:</strong> Doctor, then Profile.</li>
+          <li><strong>Any doctor's profile, as the administrator:</strong> CLINICTOPICS editor, then Doctors, then Open profile.</li>
+          <li><strong>Creating and revoking tokens:</strong> CLINICTOPICS editor, then Access tokens.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Try it in order</h3>
+        <ol class="plain-list">
+          <li>As the doctor, request a review and pay (demo), or enter the sample token <span class="code">BYL-DEMO-FREE1</span> to skip payment.</li>
+          <li>As the editor, assign a reviewer.</li>
+          <li>As the reviewer, complete the review.</li>
+          <li>As the editor, release the report.</li>
+          <li>As the doctor, read the report.</li>
+        </ol>
+        <p class="muted">To test a support invitation, enter <span class="code">BYL-DEMO-SUPPORT</span> in the <a href="#apply">application form</a>.</p>
+      </div>
+    </div>
+    <div id="portal-app" class="portal"></div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section id="resources" aria-labelledby="h-resources">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-resources">Resources</h2>
+      <p>Practical guidance for first-time authors.</p>
+    </div>
+
+    <h3>Which reporting guideline fits your study?</h3>
+    <p>Journals expect you to follow a reporting guideline for your study type. The EQUATOR Network lists the full set and their checklists.</p>
+    <div class="table-scroll" style="margin-bottom:2.5rem">
+      <table>
+        <thead><tr><th>Study type</th><th>Guideline</th></tr></thead>
+        <tbody>
+          <tr><td>Randomised trial</td><td>CONSORT</td></tr>
+          <tr><td>Observational study</td><td>STROBE</td></tr>
+          <tr><td>Systematic review or meta-analysis</td><td>PRISMA</td></tr>
+          <tr><td>Diagnostic accuracy study</td><td>STARD</td></tr>
+          <tr><td>Case report</td><td>CARE</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Guides in preparation</h3>
+    <ul class="plain-list">
+      <li>Writing your first synopsis</li>
+      <li>Preparing an ethics-committee submission</li>
+      <li>Choosing a journal, and spotting predatory ones</li>
+      <li>Downloadable templates for synopses, consent forms and cover letters</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="h-about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-about">About CLINICTOPICS</h2>
+    </div>
+    <p class="lead">Byline is an initiative of CLINICTOPICS. It exists to help clinicians publish good research, with their own name on the byline.</p>
+
+    <div class="cols" style="margin-top:2rem">
+      <div>
+        <h3>Our team and reviewers</h3>
+        <div class="empty"><p>Our team and external reviewers will be listed here, with their declarations of interest.</p></div>
+      </div>
+      <div>
+        <h3>Publication track record</h3>
+        <div class="empty"><p>Completed and published projects will be listed here as the programme progresses.</p></div>
+      </div>
+    </div>
+
+    <h3 id="policy" style="margin-top:2.5rem">Independence, ethics and authorship policy</h3>
+    <ul class="plain-list">
+      <li>Support is provided in kind. We pay no cash or gifts to applicants. Pre-submission reviewers receive a fixed honorarium for review work, never linked to an outcome or to a company.</li>
+      <li>We do not fund or select projects based on any product, brand or company.</li>
+      <li>The doctor controls the study design decisions, findings, conclusions and choice of journal.</li>
+      <li>Authorship follows recognised criteria. Contributions that don't meet them are acknowledged.</li>
+      <li>Studies proceed only after institutional ethics approval.</li>
+      <li>Selection uses the same published criteria for every applicant. CLINICTOPICS may also invite a doctor directly with an access token. Every token is logged with a reason, and a token never affects the scientific review or its outcome.</li>
+    </ul>
+
+    <h3 style="margin-top:2rem">Funding and disclosure</h3>
+    <p>This programme is funded by CLINICTOPICS. Every publication that receives our support will carry a funding statement naming CLINICTOPICS, and any relevant relationships will be disclosed.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-labelledby="h-contact">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-contact">Contact</h2>
+      <p>Questions, quote requests, feedback or complaints.</p>
+    </div>
+    <form id="contact-form" novalidate>
+      <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field">
+        <label for="c-topic">Topic</label>
+        <select id="c-topic" name="topic">
+          <option>Question about support</option>
+          <option>Quote for paid services</option>
+          <option>Feedback</option>
+          <option>Complaint</option>
+        </select>
+      </div>
+      <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required></textarea></div>
+      <button class="btn btn-primary" type="submit">Review message</button>
+    </form>
+    <div id="contact-result" class="result" role="status" tabindex="-1" hidden></div>
+    <p class="muted" style="margin-top:2rem">Email, phone and postal address will be added here before launch.</p>
+  </div>
+</section>
+
+<section id="policies" aria-labelledby="h-policies">
+  <div class="wrap">
+    <div class="section-head"><h2 id="h-policies">Privacy and data</h2></div>
+    <p>We collect only what we need to review your application: your name, contact details, registration ID, institution and synopsis. We use it to verify, review and support your project. We don't share it outside CLINICTOPICS and its reviewers. You can ask us to delete your application at any time.</p>
+    <p class="muted">This website provides publication support services. It does not provide medical, legal or regulatory advice. Full privacy, terms and application data policies will be published before applications open. Please also read the <a href="#disclaimer">full disclaimer</a> below.</p>
+  </div>
+</section>
+
+<section id="disclaimer" aria-labelledby="h-disclaimer">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 id="h-disclaimer">Disclaimer</h2>
+      <p>Please read this before you use the site or any of our services.</p>
+    </div>
+    <div class="disclaimer-text">
+      <h3>What this website is</h3>
+      <p>This website presents BYLINE, an initiative of CLINICTOPICS that offers publication support to doctors. The support includes help with study protocols, statistics, writing, journal selection, and pre-submission review of manuscripts. The site is an information and services website for medical professionals. It is not a medical journal, it does not publish research, and it is not a regulator or an ethics committee.</p>
+
+      <h3>No medical, legal or regulatory advice</h3>
+      <p>Nothing on this website is medical advice, and nothing here should be used to diagnose, treat or make decisions about any patient. Nothing here is legal, ethical or regulatory advice either. Doctors remain responsible for following the rules of their institution, their ethics committee, the relevant medical and drug regulators, and any journal they submit to.</p>
+
+      <h3>No guarantee of results</h3>
+      <p>We help doctors prepare stronger work, but we cannot guarantee that a study will be approved, that a manuscript will be accepted by any journal, or that a review will find no problems. Journals, ethics committees and institutions make their own decisions. A pre-submission review is one expert opinion, prepared from the material you provide. It is not a substitute for a journal's own peer review.</p>
+
+      <h3>You remain the author</h3>
+      <p>Authors are responsible for their data, analysis, conclusions and declarations, and for meeting recognised authorship criteria. The support we provide is acknowledged. It does not transfer authorship or responsibility to CLINICTOPICS or to any reviewer.</p>
+
+      <h3>Independence, funding and access tokens</h3>
+      <p>Support under this programme is provided in kind by CLINICTOPICS. It is not linked to any product, company or outcome. Reviewers receive a fixed honorarium for completing a review, whatever the result. CLINICTOPICS may issue access tokens, either to waive a fee or to invite a doctor into the support programme. A token affects access and payment only. It does not influence the scientific review, its findings or any journal's decision, and every token is recorded with a reason. See the <a href="#token-rules">token rules</a>.</p>
+
+      <h3>Confidentiality and patient information</h3>
+      <p>We treat unpublished manuscripts and application details as confidential and use them only to provide the service you asked for. No system is completely secure. Please do not upload anything that identifies a patient. Remove names, contact details, hospital numbers and any other identifying details before you send us a file, and make sure you have the consents and permissions your institution requires.</p>
+
+      <h3>Demonstration content</h3>
+      <p>Parts of this website, including the portal demo, use sample names, works, reports, tokens and amounts. Nothing in the demo is a real record, price or offer, and nothing you enter into it is saved or sent. Prices and terms will be published before services open.</p>
+
+      <h3>Third-party names and links</h3>
+      <p>Names of reporting guidelines, journals, regulators and standards are used only to describe the work. They belong to their owners, and mentioning them does not mean they endorse us or that we endorse them. Links to other websites are offered for convenience, and we are not responsible for what those sites contain.</p>
+
+      <h3>Limits on our responsibility</h3>
+      <p>To the extent the law allows, CLINICTOPICS and its reviewers are not liable for any loss that results from using this website, or from relying on a review, report or other material we provide. This includes a manuscript being rejected or delayed. Nothing here limits any right you have that the law does not allow to be limited.</p>
+
+      <h3>Changes to this website</h3>
+      <p>We may update this website, our services and this disclaimer as the programme develops. Please check back from time to time. If you have questions, use the <a href="#contact">contact form</a>.</p>
+      <p class="muted">Last updated: 30 September 2026.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="wordmark" href="#home">Byline<span>.</span></a>
+        <p>Independent publication support for clinicians. A CLINICTOPICS initiative.</p>
+      </div>
+      <div>
+        <h2>Programme</h2>
+        <ul>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#apply">Apply for support</a></li>
+          <li><a href="#services">Paid services</a></li>
+          <li><a href="#presubmission">Pre-submission review</a></li>
+          <li><a href="#token-rules">Token rules</a></li>
+          <li><a href="#portal">Portal demo</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>About</h2>
+        <ul>
+          <li><a href="#about">About CLINICTOPICS</a></li>
+          <li><a href="#policy">Independence policy</a></li>
+          <li><a href="#policies">Privacy and data</a></li>
+          <li><a href="#disclaimer">Disclaimer</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">Byline is an initiative of CLINICTOPICS. Registration and address details to be added. &copy; CLINICTOPICS</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+
+  function handle(formId, resultId, title, fields, hook) {
+    var form = document.getElementById(formId);
+    var out = document.getElementById(resultId);
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var missing = [];
+      Array.prototype.forEach.call(form.querySelectorAll('[required]'), function (el) {
+        var bad = el.type === 'checkbox' ? !el.checked : !el.value.trim();
+        el.setAttribute('aria-invalid', bad ? 'true' : 'false');
+        if (bad) {
+          var lab = el.type === 'checkbox' ? el.parentNode.textContent.trim() : (form.querySelector('label[for="' + el.id + '"]') || {}).textContent || el.name;
+          missing.push(lab.replace(/\s+/g, ' ').slice(0, 60));
+        }
+      });
+      if (missing.length) {
+        out.hidden = false;
+        out.innerHTML = '<strong>Please complete these before continuing:</strong><ul>' + missing.map(function (m) { return '<li>' + esc(m) + '</li>'; }).join('') + '</ul>';
+        out.focus();
+        return;
+      }
+      var extra = null;
+      if (hook) {
+        var x = hook(form);
+        if (x && x.error) {
+          out.hidden = false;
+          out.innerHTML = '<strong>This token could not be used</strong><p style="margin:.4rem 0 0">' + esc(x.error) + '</p>';
+          out.focus();
+          return;
+        }
+        extra = x && x.summary;
+      }
+      var html = '<strong>' + esc(title) + '</strong><dl>';
+      fields.forEach(function (f) {
+        var el = form.elements[f[0]];
+        if (el && el.value) html += '<dt>' + esc(f[1]) + '</dt><dd>' + esc(el.value) + '</dd>';
+      });
+      if (extra) html += '<dt>' + esc(extra[0]) + '</dt><dd>' + esc(extra[1]) + '</dd>';
+      html += '</dl><p style="margin-top:1rem"><em>This preview site does not send or store anything yet. Sending will be switched on before launch.</em></p>';
+      out.hidden = false;
+      out.innerHTML = html;
+      out.focus();
+    });
+  }
+
+  handle('apply-form', 'apply-result', 'Your application summary', [
+    ['name','Name'], ['designation','Designation'], ['institution','Institution'], ['reg','Registration ID'],
+    ['email','Email'], ['type','Study type'], ['synopsis','Synopsis']
+  ], function (form) {
+    var code = form.elements.token.value.trim();
+    if (!code) return null;
+    if (!window.BylineDemo) return { error: 'Tokens are not available in this preview.' };
+    var r = window.BylineDemo.useSupportToken(code, form.elements.name.value.trim() || 'Applicant');
+    if (!r.ok) return { error: r.why };
+    return { summary: ['Access token', 'Accepted. Your application is pre-approved for support and skips the selection round. Verification of your registration, ethics approval and the support agreement still apply.'] };
+  });
+  handle('contact-form', 'contact-result', 'Your message', [
+    ['name','Name'], ['email','Email'], ['topic','Topic'], ['message','Message']
+  ]);
+
+  // Drop-down menu for tablets and phones
+  var header = document.querySelector('.site-header');
+  var menuBtn = document.getElementById('menu-btn');
+  function setMenu(open) {
+    header.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.textContent = open ? 'Close' : 'Menu';
+  }
+  if (header && menuBtn) {
+    menuBtn.addEventListener('click', function () { setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'); });
+    Array.prototype.forEach.call(document.querySelectorAll('#main-nav a'), function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && header.classList.contains('open')) { setMenu(false); menuBtn.focus(); } });
+    document.addEventListener('click', function (e) { if (header.classList.contains('open') && !header.contains(e.target)) setMenu(false); });
+    if (window.matchMedia) {
+      var wide = window.matchMedia('(min-width: 64rem)');
+      var onWide = function (e) { if (e.matches) setMenu(false); };
+      if (wide.addEventListener) wide.addEventListener('change', onWide); else if (wide.addListener) wide.addListener(onWide);
+    }
+  }
+
+  // Highlight current section in nav
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav a'));
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting && map[en.target.id]) {
+          links.forEach(function (l) { l.classList.remove('active'); });
+          map[en.target.id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    Object.keys(map).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
+  }
+})();
+</script>
+<script>
+(function () {
+  var app = document.getElementById('portal-app');
+  if (!app) return;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  var TIERS = {
+    quick: { name: 'Quick check', price: '\u20B9XX' },
+    expert: { name: 'Expert review', price: '\u20B9XX' }
+  };
+  var FEE = '\u20B9XX';
+  var SECTIONS = ['Scientific soundness', 'Study design and statistics', 'Reporting-guideline compliance', 'Clarity and structure', 'Figures, tables and references'];
+  var CHECKS = ['Follows the relevant reporting guideline', 'All required sections are present', 'Ethics approval statement is present', 'Funding and conflict-of-interest statements are present', 'Authorship statement is present', 'References are complete and consistently formatted'];
+  var RATINGS = ['Strong', 'Adequate', 'Needs work'];
+  var READY = ['Ready to submit', 'Ready after minor changes', 'Needs major revision'];
+  var TYPES = ['Randomised or non-randomised trial', 'Observational study', 'Systematic review or meta-analysis', 'Diagnostic accuracy study', 'Case report or case series', 'Laboratory or in-vitro study'];
+
+  var state = {
+    role: 'doctor',
+    view: { doctor: 'manuscripts', reviewer: 'assignments', editor: 'queue' },
+    openId: null,
+    reportId: null,
+    msg: '',
+    reviewerId: 'r1',
+    doctor: { name: 'Dr. Asha Rao (sample)', designation: 'Consultant Physician', institution: 'Sample District Hospital', reg: 'SAMPLE-000000', specialty: 'Internal Medicine', supported: true, discountUsed: false, isPublic: true, verified: true },
+    works: [
+      { title: 'Sample entry: A retrospective audit in a district hospital', journal: 'Sample Journal of Medicine', year: 2023, status: 'Published' },
+      { title: 'Sample entry: A case report on an uncommon presentation', journal: 'Sample Case Reports', year: 2024, status: 'Published' }
+    ],
+    reviewers: [
+      { id: 'r1', name: 'Reviewer A (sample)', spec: 'Internal Medicine' },
+      { id: 'r2', name: 'Reviewer B (sample)', spec: 'Statistics and epidemiology' }
+    ],
+    nextId: 3,
+    tokens: [
+      { code: 'BYL-DEMO-FREE1', kind: 'waive', scope: 'any', maxUses: 1, uses: 0, expires: '', issuedTo: 'Sample doctor', note: 'Sample: waives payment for one review of any type', revoked: false, log: [] },
+      { code: 'BYL-DEMO-QUICK', kind: 'waive', scope: 'quick', maxUses: 3, uses: 0, expires: '', issuedTo: 'Sample group', note: 'Sample: waives payment for Quick check only, up to 3 uses', revoked: false, log: [] },
+      { code: 'BYL-DEMO-SUPPORT', kind: 'support', scope: 'support', maxUses: 1, uses: 0, expires: '', issuedTo: 'Sample doctor', note: 'Sample: pre-approves one support application', revoked: false, log: [] }
+    ],
+    ms: [
+      {
+        id: 1, title: 'Sample manuscript: Outcomes of a treatment protocol in a single centre', journal: 'Sample Journal of Clinical Practice',
+        type: 'Observational study', tier: 'expert', status: 'Report ready', discount: true, paid: true, file: 'sample-manuscript-v1.docx',
+        reviewerId: 'r1', review: null, checklist: null, honorarium: 'Paid',
+        report: {
+          by: 'External reviewer and CLINICTOPICS editor', readiness: 'Ready after minor changes',
+          sections: [
+            { name: 'Scientific soundness', rating: 'Strong', comment: 'The question is clear and the conclusions follow from the data.' },
+            { name: 'Study design and statistics', rating: 'Adequate', comment: 'State how missing data were handled.' },
+            { name: 'Reporting-guideline compliance', rating: 'Adequate', comment: 'Add the STROBE checklist as a supplement.' },
+            { name: 'Clarity and structure', rating: 'Strong', comment: 'Well organised and easy to follow.' },
+            { name: 'Figures, tables and references', rating: 'Needs work', comment: 'Table 2 is missing a denominator. Two references are incomplete.' }
+          ],
+          mustFix: ['Clarify the inclusion and exclusion criteria in the Methods.', 'Add the missing denominator to Table 2.', 'Complete the two incomplete references.']
+        }
+      },
+      {
+        id: 2, title: 'Sample manuscript: A cross-sectional survey of clinic attendees', journal: 'Sample Journal of Community Health',
+        type: 'Observational study', tier: 'expert', status: 'With reviewer', discount: false, paid: true, file: 'sample-survey-draft.docx',
+        reviewerId: 'r1', review: null, checklist: null, honorarium: null, report: null
+      }
+    ]
+  };
+
+  var SCOPES = { any: 'Any review', quick: 'Quick check only', expert: 'Expert review only', support: 'Support application' };
+  function today() { return new Date().toISOString().slice(0, 10); }
+  function tokenStatus(t) {
+    if (t.revoked) return 'Revoked';
+    if (t.expires && today() > t.expires) return 'Expired';
+    if (t.uses >= t.maxUses) return 'Used up';
+    return 'Active';
+  }
+  function findToken(code) {
+    var c = String(code || '').trim().toUpperCase();
+    for (var i = 0; i < state.tokens.length; i++) { if (state.tokens[i].code === c) return state.tokens[i]; }
+    return null;
+  }
+  function checkToken(code, need) {
+    var t = findToken(code);
+    if (!t) return { ok: false, why: 'This token was not recognised. Check the code and try again.' };
+    var st = tokenStatus(t);
+    if (st !== 'Active') return { ok: false, why: 'This token cannot be used because it is ' + st.toLowerCase() + '.' };
+    if (need.kind === 'support' && t.kind !== 'support') return { ok: false, why: 'This token is for paid services. Enter it when you request a review.' };
+    if (need.kind === 'waive' && t.kind !== 'waive') return { ok: false, why: 'This token is for a support application. Enter it on the application form.' };
+    if (need.kind === 'waive' && t.scope !== 'any' && t.scope !== need.tier) return { ok: false, why: 'This token does not cover ' + TIERS[need.tier].name + '.' };
+    return { ok: true, t: t };
+  }
+  function redeem(t, what, who) { t.uses += 1; t.log.push({ when: today(), who: who || state.doctor.name, what: what }); }
+  function genCode() {
+    var A = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789', out = '';
+    for (var i = 0; i < 8; i++) out += A.charAt(Math.floor(Math.random() * A.length));
+    return 'BYL-' + out.slice(0, 4) + '-' + out.slice(4);
+  }
+  function byId(id) { for (var i = 0; i < state.ms.length; i++) { if (state.ms[i].id === id) return state.ms[i]; } return null; }
+  function reviewerName(id) { for (var i = 0; i < state.reviewers.length; i++) { if (state.reviewers[i].id === id) return state.reviewers[i].name; } return 'Unassigned'; }
+  function chip(t, ok) { return '<span class="chip' + (ok ? ' ok' : '') + '">' + esc(t) + '</span>'; }
+  function priceText(m) { return TIERS[m.tier].price + (m.discount ? ' (discounted)' : ''); }
+  function subnav(items, current) {
+    return '<nav class="subnav" aria-label="Portal sections">' + items.map(function (i) {
+      return '<button type="button" data-action="view" data-view="' + i[0] + '"' + (i[0] === current ? ' aria-current="page"' : '') + '>' + esc(i[1]) + '</button>';
+    }).join('') + '</nav>';
+  }
+  function opts(list, sel) {
+    return list.map(function (o) { return '<option' + (o === sel ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('');
+  }
+
+  function reportHTML(m) {
+    var r = m.report;
+    var rows = r.sections.map(function (s) {
+      return '<tr><td>' + esc(s.name) + '</td><td>' + esc(s.rating) + '</td><td>' + esc(s.comment || '') + '</td></tr>';
+    }).join('');
+    var fix = r.mustFix.length ? '<ul class="plain-list">' + r.mustFix.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul>' : '<p>No must-fix items.</p>';
+    return '<div class="report"><h3>Pre-submission report</h3>' +
+      '<p class="muted" style="margin:0 0 .6rem">' + esc(m.title) + '<br>Target journal: ' + esc(m.journal) + '. Prepared by: ' + esc(r.by) + '.</p>' +
+      '<p><strong>Readiness:</strong> ' + esc(r.readiness) + '</p>' +
+      '<div class="table-scroll"><table><thead><tr><th>Area</th><th>Assessment</th><th>Comments</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '<h3 style="margin-top:1rem">Must fix before you submit</h3>' + fix +
+      '<p class="muted" style="margin:0">Sample report generated in the demo. The doctor stays the author and decides what to change.</p></div>';
+  }
+
+  /* ---------- Doctor ---------- */
+  function doctorView() {
+    var v = state.view.doctor, d = state.doctor;
+    var html = subnav([['profile', 'Profile'], ['works', 'My works'], ['manuscripts', 'My manuscripts'], ['new', 'Request a review']], v);
+    html += '<div class="pbody">';
+    if (v === 'profile') {
+      html += '<h3>' + esc(d.name) + '</h3><p class="muted" style="margin:0 0 .8rem">' + esc(d.designation) + ', ' + esc(d.institution) + '</p>' +
+        '<dl class="facts"><dt>Specialty</dt><dd>' + esc(d.specialty) + '</dd>' +
+        '<dt>Registration ID</dt><dd>' + esc(d.reg) + ' ' + chip(d.verified ? 'Verified by CLINICTOPICS (sample)' : 'Awaiting verification', d.verified) + '</dd>' +
+        '<dt>Programme</dt><dd>' + (d.supported ? 'Supported doctor' : 'Paid services') + '</dd></dl>' +
+        '<label class="check"><input type="checkbox" data-action="toggle-public"' + (d.isPublic ? ' checked' : '') + '> Show my public profile</label>' +
+        '<h3 style="margin-top:1.2rem">Public profile preview</h3>';
+      if (d.isPublic) {
+        var pub = state.works.filter(function (w) { return w.status === 'Published'; });
+        html += pub.length ? pub.map(function (w) {
+          return '<div class="row"><div class="grow"><strong>' + esc(w.title) + '</strong><p>' + esc(w.journal) + ', ' + esc(w.year) + '</p></div></div>';
+        }).join('') : '<p class="muted">No published works to show yet.</p>';
+      } else {
+        html += '<p class="muted">Your public profile is switched off.</p>';
+      }
+      html += '<p class="muted" style="margin-top:.8rem">Only published works appear on a public profile. Unpublished manuscripts always stay private.</p>';
+    } else if (v === 'works') {
+      html += '<h3>My works</h3>' + (state.works.length ? state.works.map(function (w) {
+        return '<div class="row"><div class="grow"><strong>' + esc(w.title) + '</strong><p>' + esc(w.journal) + ', ' + esc(w.year) + '</p></div><div>' + chip(w.status, w.status === 'Published') + '</div></div>';
+      }).join('') : '<p class="muted">Nothing here yet. Add your first work below.</p>') +
+        '<h3 style="margin-top:1.4rem">Add a work</h3>' +
+        '<form data-form="add-work" novalidate>' +
+        '<div class="field"><label for="w-title">Title</label><input id="w-title" name="title" type="text" required></div>' +
+        '<div class="field"><label for="w-journal">Journal</label><input id="w-journal" name="journal" type="text"></div>' +
+        '<div class="field"><label for="w-year">Year</label><input id="w-year" name="year" type="text" inputmode="numeric"></div>' +
+        '<div class="field"><label for="w-status">Status</label><select id="w-status" name="status"><option>Published</option><option>Accepted</option><option>In preparation</option></select></div>' +
+        '<p class="form-error" role="alert" hidden></p>' +
+        '<button class="btn btn-primary btn-sm" type="submit">Add work</button></form>';
+    } else if (v === 'manuscripts') {
+      html += '<h3>My manuscripts</h3>';
+      html += state.ms.length ? state.ms.map(function (m) {
+        var act = '';
+        if (m.status === 'Awaiting payment') act = '<button class="btn btn-primary btn-sm" type="button" data-action="pay" data-id="' + m.id + '">Pay ' + esc(priceText(m)) + ' (demo)</button>';
+        else if (m.status === 'Report ready') act = '<button class="btn btn-ghost btn-sm" type="button" data-action="open-report" data-id="' + m.id + '">View report</button>';
+        return '<div class="row"><div class="grow"><strong>' + esc(m.title) + '</strong><p>' + esc(m.journal) + '. ' + esc(m.type) + '. ' + esc(TIERS[m.tier].name) + '.</p></div><div class="actions">' + chip(m.status, m.status === 'Report ready') + (m.waived ? ' ' + chip('Payment waived by token') : '') + ' ' + act + '</div></div>';
+      }).join('') : '<p class="muted">No manuscripts yet. Request a review to start.</p>';
+      var open = state.reportId ? byId(state.reportId) : null;
+      if (open && open.report) html += reportHTML(open);
+    } else if (v === 'new') {
+      var disc = d.supported && !d.discountUsed;
+      html += '<h3>Request a pre-submission review</h3>' +
+        (disc ? '<p class="muted">As a supported-programme doctor, your first review is discounted.</p>' : '') +
+        '<form data-form="new-ms" novalidate>' +
+        '<div class="field"><label for="n-title">Manuscript title</label><input id="n-title" name="title" type="text" required></div>' +
+        '<div class="field"><label for="n-journal">Target journal</label><input id="n-journal" name="journal" type="text" required></div>' +
+        '<div class="field"><label for="n-type">Study type</label><select id="n-type" name="type">' + opts(TYPES) + '</select></div>' +
+        '<fieldset><legend>Review type</legend>' +
+        '<label class="check"><input type="radio" name="tier" value="quick"> <span><strong>Quick check</strong> ' + TIERS.quick.price + (disc ? ' (discounted)' : '') + '<br><span class="hint">CLINICTOPICS editor checks guideline compliance, structure and required statements.</span></span></label>' +
+        '<label class="check"><input type="radio" name="tier" value="expert" checked> <span><strong>Expert review</strong> ' + TIERS.expert.price + (disc ? ' (discounted)' : '') + '<br><span class="hint">An external expert reviews the science and methods, and an editor prepares one report.</span></span></label></fieldset>' +
+        '<div class="field"><label for="n-token">Access token <span class="hint">Optional. If CLINICTOPICS gave you a token, enter it to skip payment.</span></label><input id="n-token" name="token" type="text" autocomplete="off"></div>' +
+        '<div class="field"><label for="n-file">Manuscript file <span class="hint">Demo only: the file is not uploaded.</span></label><input id="n-file" name="file" type="file" accept=".doc,.docx,.pdf"></div>' +
+        '<fieldset><legend>Declarations</legend>' +
+        '<label class="check"><input type="checkbox" name="d1"> I am an author of this manuscript.</label>' +
+        '<label class="check"><input type="checkbox" name="d2"> I understand reviewers keep the manuscript confidential, and I remain responsible for all changes.</label></fieldset>' +
+        '<p class="form-error" role="alert" hidden></p>' +
+        '<button class="btn btn-primary btn-sm" type="submit">Create request</button></form>';
+    }
+    return html + '</div>';
+  }
+
+  /* ---------- Reviewer ---------- */
+  function reviewerView() {
+    var v = state.view.reviewer;
+    var html = '<div class="pbody">';
+    if (v === 'review' && state.openId) {
+      var m = byId(state.openId);
+      html += '<button class="btn btn-ghost btn-sm" type="button" data-action="view" data-view="assignments">Back to assignments</button>' +
+        '<h3 style="margin-top:1rem">' + esc(m.title) + '</h3>' +
+        '<p class="muted">' + esc(m.journal) + '. ' + esc(m.type) + '. Author details are hidden from reviewers.</p>' +
+        '<form data-form="review" data-id="' + m.id + '" novalidate>';
+      SECTIONS.forEach(function (s, i) {
+        html += '<div class="field"><label for="rv-r' + i + '">' + esc(s) + '</label>' +
+          '<select id="rv-r' + i + '" name="rating' + i + '">' + opts(RATINGS, 'Adequate') + '</select>' +
+          '<textarea name="comment' + i + '" aria-label="Comments on ' + esc(s) + '" style="min-height:4.5rem;margin-top:.4rem"></textarea></div>';
+      });
+      html += '<div class="field"><label for="rv-ready">Overall readiness</label><select id="rv-ready" name="ready">' + opts(READY, 'Ready after minor changes') + '</select></div>' +
+        '<div class="field"><label for="rv-fix">Must fix before submission <span class="hint">One item per line.</span></label><textarea id="rv-fix" name="fix" style="min-height:6rem"></textarea></div>' +
+        '<div class="field"><label for="rv-note">Confidential note to the editor <span class="hint">Not shared with the author.</span></label><textarea id="rv-note" name="note" style="min-height:4.5rem"></textarea></div>' +
+        '<label class="check"><input type="checkbox" name="coi"> I declare that I have no conflict of interest with this manuscript.</label>' +
+        '<p class="form-error" role="alert" hidden></p>' +
+        '<button class="btn btn-primary btn-sm" type="submit">Submit review</button></form>';
+    } else {
+      var mine = state.ms.filter(function (m) { return m.reviewerId === state.reviewerId && m.tier === 'expert' && m.paid; });
+      html += '<div class="field" style="max-width:20rem"><label for="who">Signed in as</label><select id="who" data-action="switch-reviewer">' +
+        state.reviewers.map(function (r) { return '<option value="' + r.id + '"' + (r.id === state.reviewerId ? ' selected' : '') + '>' + esc(r.name) + '</option>'; }).join('') + '</select></div>' +
+        '<h3>My assignments</h3>';
+      html += mine.length ? mine.map(function (m) {
+        var act = m.status === 'With reviewer'
+          ? '<button class="btn btn-primary btn-sm" type="button" data-action="open-review" data-id="' + m.id + '">Open review</button>'
+          : chip('Review submitted', true) + ' ' + chip('Honorarium: ' + (m.honorarium || 'Due'));
+        return '<div class="row"><div class="grow"><strong>' + esc(m.title) + '</strong><p>' + esc(m.journal) + '. ' + esc(m.type) + '. Author hidden.</p></div><div class="actions">' + act + '</div></div>';
+      }).join('') : '<p class="muted">No manuscripts are assigned to you.</p>';
+      html += '<p class="muted" style="margin-top:1rem">You only see manuscripts assigned to you. Your fee is fixed per completed review and is not linked to any outcome.</p>';
+    }
+    return html + '</div>';
+  }
+
+  /* ---------- Editor ---------- */
+  function tokenRow(t) {
+    var st = tokenStatus(t);
+    var log = t.log.length ? '<p>Used: ' + t.log.map(function (l) { return esc(l.when + ', ' + l.who + ': ' + l.what); }).join('; ') + '</p>' : '';
+    return '<div class="row"><div class="grow"><strong class="code">' + esc(t.code) + '</strong>' +
+      '<p>' + (t.kind === 'waive' ? 'Waives payment' : 'Pre-approves a support application') + '. ' + esc(SCOPES[t.scope]) + '. Uses ' + t.uses + ' of ' + t.maxUses + '.' + (t.expires ? ' Expires ' + esc(t.expires) + '.' : ' No expiry.') + '</p>' +
+      '<p>Issued to: ' + esc(t.issuedTo || 'not stated') + '. Reason: ' + esc(t.note) + '</p>' + log + '</div>' +
+      '<div class="actions">' + chip(st, st === 'Active') + (st === 'Active' ? ' <button class="btn btn-ghost btn-sm" type="button" data-action="revoke" data-code="' + esc(t.code) + '">Revoke</button>' : '') + '</div></div>';
+  }
+
+  function editorView() {
+    var v = state.view.editor, d = state.doctor;
+    var cur = v === 'check' ? 'queue' : v === 'doctor' ? 'doctors' : v;
+    var html = subnav([['queue', 'Review queue'], ['tokens', 'Access tokens'], ['doctors', 'Doctors'], ['honoraria', 'Reviewer honoraria']], cur);
+    html += '<div class="pbody">';
+    if (v === 'check' && state.openId) {
+      var m = byId(state.openId);
+      html += '<button class="btn btn-ghost btn-sm" type="button" data-action="view" data-view="queue">Back to queue</button>' +
+        '<h3 style="margin-top:1rem">Quick check: ' + esc(m.title) + '</h3>' +
+        '<form data-form="check" data-id="' + m.id + '" novalidate><fieldset><legend>Tick what is in order</legend>' +
+        CHECKS.map(function (c, i) { return '<label class="check"><input type="checkbox" name="c' + i + '"> ' + esc(c) + '</label>'; }).join('') + '</fieldset>' +
+        '<div class="field"><label for="ck-ready">Overall readiness</label><select id="ck-ready" name="ready">' + opts(READY, 'Ready after minor changes') + '</select></div>' +
+        '<div class="field"><label for="ck-notes">Extra must-fix items <span class="hint">One per line.</span></label><textarea id="ck-notes" name="notes" style="min-height:5rem"></textarea></div>' +
+        '<button class="btn btn-primary btn-sm" type="submit">Release report</button></form>';
+    } else if (v === 'tokens') {
+      html += '<h3>Access tokens</h3>' +
+        '<p class="muted">A token lets you waive a fee, or invite a doctor into the support programme without a selection round. It affects access and payment only. It never changes the scientific review or its outcome, and every token is logged with a reason.</p>' +
+        '<form data-form="gen-token" novalidate>' +
+        '<div class="field"><label for="tk-kind">Token type</label><select id="tk-kind" name="kind"><option value="waive">Waive payment for a paid review</option><option value="support">Pre-approve a support application</option></select></div>' +
+        '<div class="field"><label for="tk-scope">Applies to <span class="hint">For payment waivers only.</span></label><select id="tk-scope" name="scope"><option value="any">Any review</option><option value="quick">Quick check only</option><option value="expert">Expert review only</option></select></div>' +
+        '<div class="field"><label for="tk-uses">Number of uses</label><select id="tk-uses" name="uses"><option>1</option><option>2</option><option>5</option><option>10</option></select></div>' +
+        '<div class="field"><label for="tk-exp">Expiry date <span class="hint">Optional.</span></label><input id="tk-exp" name="expires" type="date"></div>' +
+        '<div class="field"><label for="tk-to">Issued to <span class="hint">Optional. A name or group.</span></label><input id="tk-to" name="issuedTo" type="text"></div>' +
+        '<div class="field"><label for="tk-note">Reason</label><input id="tk-note" name="note" type="text" required></div>' +
+        '<p class="form-error" role="alert" hidden></p>' +
+        '<button class="btn btn-primary btn-sm" type="submit">Generate token</button></form>' +
+        '<h3 style="margin-top:1.6rem">Tokens issued</h3>' + state.tokens.map(tokenRow).join('') +
+        '<p class="muted" style="margin-top:1rem">Demo only. In the live version tokens are created and checked on a secure server, cannot be guessed, expire, and are recorded in an audit log.</p>';
+    } else if (v === 'doctors') {
+      html += '<h3>Doctors</h3><div class="row"><div class="grow"><strong>' + esc(d.name) + '</strong><p>' + esc(d.designation) + ', ' + esc(d.institution) + '. ' + esc(d.specialty) + '.</p></div>' +
+        '<div class="actions">' + chip(d.verified ? 'Registration verified' : 'Awaiting verification', d.verified) + ' ' + chip(d.supported ? 'Supported doctor' : 'Paid services') +
+        ' <button class="btn btn-primary btn-sm" type="button" data-action="open-doctor">Open profile</button></div></div>' +
+        '<p class="muted" style="margin-top:1rem">Every doctor who registers appears here. Open a profile to verify a registration, see their works and manuscripts, and see what the public sees.</p>';
+    } else if (v === 'doctor') {
+      var pub = state.works.filter(function (w) { return w.status === 'Published'; });
+      html += '<button class="btn btn-ghost btn-sm" type="button" data-action="view" data-view="doctors">Back to doctors</button>' +
+        '<h3 style="margin-top:1rem">' + esc(d.name) + '</h3><p class="muted" style="margin:0 0 .8rem">' + esc(d.designation) + ', ' + esc(d.institution) + '</p>' +
+        '<dl class="facts"><dt>Specialty</dt><dd>' + esc(d.specialty) + '</dd>' +
+        '<dt>Registration ID</dt><dd>' + esc(d.reg) + ' ' + chip(d.verified ? 'Verified' : 'Awaiting verification', d.verified) +
+        ' <button class="btn btn-ghost btn-sm" type="button" data-action="toggle-verified">' + (d.verified ? 'Remove verification' : 'Mark as verified') + '</button></dd>' +
+        '<dt>Programme</dt><dd>' + (d.supported ? 'Supported doctor' : 'Paid services') + '</dd>' +
+        '<dt>Public profile</dt><dd>' + (d.isPublic ? 'Switched on by the doctor' : 'Switched off by the doctor') + '</dd></dl>' +
+        '<h3>Works</h3>' + state.works.map(function (w) {
+          return '<div class="row"><div class="grow"><strong>' + esc(w.title) + '</strong><p>' + esc(w.journal) + ', ' + esc(w.year) + '</p></div><div>' + chip(w.status, w.status === 'Published') + '</div></div>';
+        }).join('') +
+        '<h3 style="margin-top:1.2rem">Manuscripts (private)</h3>' + (state.ms.length ? state.ms.map(function (m) {
+          return '<div class="row"><div class="grow"><strong>' + esc(m.title) + '</strong><p>' + esc(TIERS[m.tier].name) + '. ' + esc(m.journal) + '</p></div><div>' + chip(m.status, m.status === 'Report ready') + '</div></div>';
+        }).join('') : '<p class="muted">None yet.</p>') +
+        '<h3 style="margin-top:1.2rem">What the public sees</h3>' + (d.isPublic ? (pub.length ? pub.map(function (w) {
+          return '<div class="row"><div class="grow"><strong>' + esc(w.title) + '</strong><p>' + esc(w.journal) + ', ' + esc(w.year) + '</p></div></div>';
+        }).join('') : '<p class="muted">No published works to show yet.</p>') : '<p class="muted">The doctor has switched the public profile off.</p>') +
+        '<p class="muted" style="margin-top:.8rem">Manuscripts are never shown publicly.</p>';
+    } else if (v === 'honoraria') {
+      var due = state.ms.filter(function (m) { return m.honorarium; });
+      html += '<h3>Reviewer honoraria</h3>' +
+        '<p class="muted">A fixed fee for each completed review. It is never linked to the outcome, to any manuscript decision, or to any company. In the real version you pay by bank or UPI transfer and record it here.</p>';
+      html += due.length ? due.map(function (m) {
+        return '<div class="row"><div class="grow"><strong>' + esc(reviewerName(m.reviewerId)) + '</strong><p>' + esc(m.title) + '. Fee ' + FEE + '.</p></div><div class="actions">' + chip(m.honorarium, m.honorarium === 'Paid') +
+          (m.honorarium === 'Due' ? ' <button class="btn btn-ghost btn-sm" type="button" data-action="mark-paid" data-id="' + m.id + '">Mark paid</button>' : '') + '</div></div>';
+      }).join('') : '<p class="muted">No completed reviews yet.</p>';
+    } else {
+      html += '<h3>Review queue</h3><p class="muted">Author: ' + esc(d.name) + '.</p>';
+      html += state.ms.length ? state.ms.map(function (m) {
+        var act = '';
+        if (m.status === 'Awaiting payment') act = '<span class="muted">Waiting for payment</span>';
+        else if (m.status === 'Submitted' && m.tier === 'expert') {
+          act = '<select data-assign="' + m.id + '" aria-label="Assign a reviewer">' + state.reviewers.map(function (r) { return '<option value="' + r.id + '">' + esc(r.name) + ', ' + esc(r.spec) + '</option>'; }).join('') + '</select> ' +
+            '<button class="btn btn-primary btn-sm" type="button" data-action="assign" data-id="' + m.id + '">Assign</button>';
+        } else if (m.status === 'Submitted') act = '<button class="btn btn-primary btn-sm" type="button" data-action="open-check" data-id="' + m.id + '">Run check</button>';
+        else if (m.status === 'With reviewer') act = '<span class="muted">With ' + esc(reviewerName(m.reviewerId)) + '</span>';
+        else if (m.status === 'Review submitted') act = '<button class="btn btn-primary btn-sm" type="button" data-action="release" data-id="' + m.id + '">Compile and release report</button>';
+        else act = chip('Released', true);
+        return '<div class="row"><div class="grow"><strong>' + esc(m.title) + '</strong><p>' + esc(TIERS[m.tier].name) + '. ' + esc(m.journal) + '. ' + (m.waived ? 'Payment waived by token.' : m.discount ? 'Discounted first review.' : 'Standard fee.') + '</p></div><div class="actions">' + chip(m.status) + ' ' + act + '</div></div>';
+      }).join('') : '<p class="muted">The queue is empty.</p>';
+    }
+    return html + '</div>';
+  }
+
+  function render() {
+    var roles = [['doctor', 'Doctor'], ['reviewer', 'Reviewer'], ['editor', 'CLINICTOPICS editor']];
+    var html = '<div class="roles" role="group" aria-label="View the portal as">' + roles.map(function (r) {
+      return '<button type="button" data-action="role" data-role="' + r[0] + '" aria-pressed="' + (state.role === r[0]) + '">' + r[1] + '</button>';
+    }).join('') + '</div>';
+    html += '<div id="portal-msg" class="toast" tabindex="-1" role="status"' + (state.msg ? '' : ' hidden') + '>' + esc(state.msg) + '</div>';
+    html += state.role === 'doctor' ? doctorView() : state.role === 'reviewer' ? reviewerView() : editorView();
+    app.innerHTML = html;
+    if (state.msg) {
+      var m = document.getElementById('portal-msg');
+      if (m) { m.focus({ preventScroll: true }); m.scrollIntoView({ block: 'nearest' }); }
+      state.msg = '';
+    }
+  }
+
+  function buildReport(m) {
+    if (m.tier === 'expert' && m.review) {
+      return { by: 'External reviewer and CLINICTOPICS editor', readiness: m.review.ready, sections: m.review.sections, mustFix: m.review.fix };
+    }
+    return { by: 'CLINICTOPICS editor', readiness: m.checklist.ready, sections: m.checklist.sections, mustFix: m.checklist.fix };
+  }
+  function lines(t) { return String(t || '').split('\n').map(function (x) { return x.trim(); }).filter(Boolean); }
+  function showErr(form, text) { var p = form.querySelector('.form-error'); if (p) { p.textContent = text; p.hidden = false; } }
+
+  app.addEventListener('click', function (e) {
+    var t = e.target.closest('[data-action]');
+    if (!t) return;
+    var a = t.getAttribute('data-action'), id = parseInt(t.getAttribute('data-id'), 10), m;
+    if (a === 'role') { state.role = t.getAttribute('data-role'); state.openId = null; render(); }
+    else if (a === 'view') { state.view[state.role] = t.getAttribute('data-view'); if (state.role === 'doctor' && t.getAttribute('data-view') !== 'manuscripts') state.reportId = null; render(); }
+    else if (a === 'pay') { m = byId(id); m.paid = true; m.status = 'Submitted'; state.msg = 'Payment recorded (demo). No real payment was taken. Your request is now with the CLINICTOPICS editor.'; render(); }
+    else if (a === 'open-report') { state.reportId = id; render(); }
+    else if (a === 'open-review') { state.openId = id; state.view.reviewer = 'review'; render(); }
+    else if (a === 'open-check') { state.openId = id; state.view.editor = 'check'; render(); }
+    else if (a === 'assign') {
+      var sel = app.querySelector('select[data-assign="' + id + '"]');
+      m = byId(id); m.reviewerId = sel.value; m.status = 'With reviewer';
+      state.msg = 'Assigned to ' + reviewerName(m.reviewerId) + '. In the real version the reviewer confirms there is no conflict of interest first.'; render();
+    }
+    else if (a === 'release') { m = byId(id); m.report = buildReport(m); m.status = 'Report ready'; state.msg = 'Report released to the doctor.'; render(); }
+    else if (a === 'mark-paid') { byId(id).honorarium = 'Paid'; state.msg = 'Honorarium marked as paid.'; render(); }
+    else if (a === 'open-doctor') { state.view.editor = 'doctor'; render(); }
+    else if (a === 'toggle-verified') { state.doctor.verified = !state.doctor.verified; state.msg = state.doctor.verified ? 'Registration marked as verified.' : 'Verification removed.'; render(); }
+    else if (a === 'revoke') { var tk = findToken(t.getAttribute('data-code')); if (tk) { tk.revoked = true; state.msg = 'Token ' + tk.code + ' revoked.'; render(); } }
+  });
+
+  app.addEventListener('change', function (e) {
+    var t = e.target, a = t.getAttribute && t.getAttribute('data-action');
+    if (a === 'toggle-public') { state.doctor.isPublic = t.checked; render(); }
+    else if (a === 'switch-reviewer') { state.reviewerId = t.value; render(); }
+  });
+
+  app.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = e.target, kind = form.getAttribute('data-form'), f = form.elements, m;
+    if (kind === 'add-work') {
+      if (!f.title.value.trim()) { showErr(form, 'Enter a title for the work.'); return; }
+      state.works.push({ title: f.title.value.trim(), journal: f.journal.value.trim() || 'Journal not stated', year: f.year.value.trim() || 'Year not stated', status: f.status.value });
+      state.msg = 'Work added to your profile.'; render();
+    } else if (kind === 'new-ms') {
+      var problems = [];
+      if (!f.title.value.trim()) problems.push('a manuscript title');
+      if (!f.journal.value.trim()) problems.push('a target journal');
+      if (!f.file.files || !f.file.files.length) problems.push('a manuscript file');
+      if (!f.d1.checked || !f.d2.checked) problems.push('both declarations');
+      if (problems.length) { showErr(form, 'Please add ' + problems.join(', ') + '.'); return; }
+      var tokRes = null, code = f.token.value.trim();
+      if (code) { tokRes = checkToken(code, { kind: 'waive', tier: f.tier.value }); if (!tokRes.ok) { showErr(form, tokRes.why); return; } }
+      var disc = !tokRes && state.doctor.supported && !state.doctor.discountUsed;
+      if (disc) state.doctor.discountUsed = true;
+      var nm = { id: state.nextId++, title: f.title.value.trim(), journal: f.journal.value.trim(), type: f.type.value, tier: f.tier.value, status: tokRes ? 'Submitted' : 'Awaiting payment', discount: disc, paid: !!tokRes, waived: !!tokRes, file: f.file.files[0].name, reviewerId: null, review: null, checklist: null, honorarium: null, report: null };
+      state.ms.push(nm);
+      if (tokRes) redeem(tokRes.t, 'Payment waived for "' + nm.title + '" (' + TIERS[nm.tier].name + ')');
+      state.view.doctor = 'manuscripts'; state.reportId = null;
+      state.msg = tokRes ? 'Token accepted. Payment skipped. Your request is now with the CLINICTOPICS editor.' : 'Request created. Pay to send it to CLINICTOPICS.'; render();
+    } else if (kind === 'gen-token') {
+      if (!f.note.value.trim()) { showErr(form, 'Enter a reason. Every token is logged with one.'); return; }
+      var isSupport = f.kind.value === 'support', made = genCode();
+      state.tokens.unshift({ code: made, kind: f.kind.value, scope: isSupport ? 'support' : f.scope.value, maxUses: parseInt(f.uses.value, 10), uses: 0, expires: f.expires.value || '', issuedTo: f.issuedTo.value.trim(), note: f.note.value.trim(), revoked: false, log: [] });
+      state.msg = 'Token created: ' + made + '. Share it with the doctor.'; render();
+    } else if (kind === 'review') {
+      m = byId(parseInt(form.getAttribute('data-id'), 10));
+      if (!f.coi.checked) { showErr(form, 'Please confirm the conflict-of-interest declaration.'); return; }
+      m.review = {
+        ready: f.ready.value, fix: lines(f.fix.value), note: f.note.value,
+        sections: SECTIONS.map(function (s, i) { return { name: s, rating: f['rating' + i].value, comment: f['comment' + i].value.trim() }; })
+      };
+      m.status = 'Review submitted'; m.honorarium = 'Due'; state.view.reviewer = 'assignments'; state.openId = null;
+      state.msg = 'Review submitted. Thank you. Your honorarium is now due.'; render();
+    } else if (kind === 'check') {
+      m = byId(parseInt(form.getAttribute('data-id'), 10));
+      var fix = [];
+      var secs = CHECKS.map(function (c, i) {
+        var ok = f['c' + i].checked;
+        if (!ok) fix.push(c + ' needs attention.');
+        return { name: c, rating: ok ? 'Strong' : 'Needs work', comment: '' };
+      });
+      m.checklist = { ready: f.ready.value, sections: secs, fix: fix.concat(lines(f.notes.value)) };
+      m.report = buildReport(m); m.status = 'Report ready'; state.view.editor = 'queue'; state.openId = null;
+      state.msg = 'Report released to the doctor.'; render();
+    }
+  });
+
+  window.BylineDemo = {
+    useSupportToken: function (code, who) {
+      var r = checkToken(code, { kind: 'support' });
+      if (r.ok) { redeem(r.t, 'Support application pre-approved', who); render(); }
+      return r;
+    }
+  };
+
+  render();
+})();
+
+</script>
+</body>
+</html>
